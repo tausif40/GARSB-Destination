@@ -22,7 +22,7 @@ function Footer() {
 						<div className="mb-4">
 							<h4 className="font-semibold mt-6 mb-2 text-xl text-red-600">About Us</h4>
 							<p className="text-lg text-gray-600 w-60">We provide you the service like your home.</p>
-							<p className="text-sm text-gray-600 mt-4">admissions.delhi@garsb.com</p>
+							<p className="text-sm text-gray-600 mt-4">www.garsbdestination.com</p>
 						</div>
 
 						<div>
@@ -58,7 +58,7 @@ function Footer() {
 							<div className='flex flex-col justify-between gap-2'>
 								<p className="text-sm text-gray-600 mb-2">138, Kodabaruan, Charampa, Bhadrak, Odisha, 756101</p>
 								<div>
-									<p className="text-sm text-gray-600 mb-1">admissions.delhi@garsb.com</p>
+									<p className="text-sm text-gray-600 mb-1">admissions.abroad5@gmail.com</p>
 									<p className="text-sm text-gray-600">+91 9110-548-675</p>
 								</div>
 							</div>
@@ -82,7 +82,7 @@ function Footer() {
 									4th Floor, Kuril, Vatara, Ka-24 Progati Sarani Rd, Dhaka 1229, Bangladesh
 								</p>
 								<div>
-									<p className="text-sm text-gray-600 mb-1">admissions.bangladesh@garsb.com</p>
+									<p className="text-sm text-gray-600 mb-1">admissions.abroad5@gmail.com</p>
 									<p className="text-sm text-gray-600">+91 798-1283-457</p>
 								</div>
 							</div>
