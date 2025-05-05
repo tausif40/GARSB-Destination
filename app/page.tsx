@@ -140,9 +140,9 @@ export default function Home() {
                   height={200}
                   className="w-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
-                <div className="absolute bottom-0 left-0 right-0  p-4 bg-white w-2/3 border-l border-b">
+                <div className="absolute bottom-0 left-0 right-0  p-4 bg-white w-3/4 md:w-2/3 border-l border-b">
                   <h3 className="text-red-500 font-medium text-lg">{city}</h3>
-                </div>
+                </div>f
               </div>
             ))}
           </div>
