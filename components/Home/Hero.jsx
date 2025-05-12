@@ -9,11 +9,13 @@ function Hero() {
 				<div className="container h-[75vh] relative z-20 flex flex-col md:flex-row items-end">
 					<div className="w-full md:w-3/5 py-6 md:py-16 text-white ">
 						<ul className="space-y-3 list-disc pl-6 md:mt-16">
-							<li className="text-xl sm:text-2xl md:text-3xl font-semibold">Admissions Assistance</li>
-							<li className="text-xl sm:text-2xl md:text-3xl font-semibold">Free Profiles Evaluation</li>
-							<li className="text-xl sm:text-2xl md:text-3xl font-semibold">100% Visa Assistance</li>
-							<li className="text-xl sm:text-2xl md:text-3xl font-semibold">Scholarship Assistance</li>
 							<li className="text-xl sm:text-2xl md:text-3xl font-semibold">Admissions from 80+ Universities</li>
+							<li className="text-xl sm:text-2xl md:text-3xl font-semibold">Free Profiles Evaluation</li>
+							<li className="text-xl sm:text-2xl md:text-3xl font-semibold">Scholarship Assistance</li>
+							<li className="text-xl sm:text-2xl md:text-3xl font-semibold">University Interview prepartion</li>
+							<li className="text-xl sm:text-2xl md:text-3xl font-semibold">100% Visa Assistance</li>
+							<li className="text-xl sm:text-2xl md:text-3xl font-semibold">Accommodation and Part Time Job assistance</li>
+							<li className="text-xl sm:text-2xl md:text-3xl font-semibold">Post Study Work Visa Help</li>
 						</ul>
 					</div>
 					{/* <div className="w-full md:w-2/">
