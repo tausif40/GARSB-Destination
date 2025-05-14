@@ -1,34 +1,43 @@
 "use client";
 
 import { useState } from "react";
+import apiClient from "@/lib/apiClient";
 
 const EnquiryForm = () => {
   const [selectedDegree, setSelectedDegree] = useState("MBA");
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
+    mobileNumber: "",
   });
+
 
   const degreeOptions = ["MBA", "Bachelors", "Masters", "Research", "Other"];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setError('')
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (formData?.mobileNumber.length <= 10) {
+      setError('mobile number must be 10 digit')
+      return;
+    }
 
     const submission = {
       ...formData,
       interest: selectedDegree,
     };
 
-    // Replace this with an API call or other logic
     console.log("Form submitted:", submission);
-
+    const res = await apiClient.post("/consultation", submission);
+    console.log(res)
     // Optional: Reset form
-    setFormData({ name: "", email: "", phone: "" });
+    setFormData({ name: "", email: "", mobileNumber: "" });
     setSelectedDegree("MBA");
   };
 
@@ -76,14 +85,16 @@ const EnquiryForm = () => {
         </div>
         <div>
           <input
-            type="tel"
-            name="phone"
-            value={formData.phone}
+            type="number"
+            name="mobileNumber"
+            value={formData.mobileNumber}
             onChange={handleChange}
+            minLength={10}
             placeholder="Contact Number"
             className="w-full p-2 border-b focus:border-red-500 border-gray-300 rounded outline-none"
             required
           />
+          <p className="text-sm text-red-500">{error}</p>
         </div>
 
         <button
