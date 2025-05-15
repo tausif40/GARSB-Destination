@@ -2,10 +2,13 @@
 
 import { useState } from "react";
 import apiClient from "@/lib/apiClient";
+import axios from "axios";
 
 const EnquiryForm = () => {
   const [selectedDegree, setSelectedDegree] = useState("MBA");
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [send, isSend] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,22 +26,29 @@ const EnquiryForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (formData?.mobileNumber.length <= 10) {
+    if (formData?.mobileNumber.length < 10) {
       setError('mobile number must be 10 digit')
       return;
     }
 
     const submission = {
       ...formData,
-      interest: selectedDegree,
+      interestedCouse: selectedDegree,
     };
+    try {
+      setIsLoading(true)
+      console.log("Form submitted:", submission);
+      const res = await axios.post("https://garsb.onrender.com/consultation", submission);
+      console.log(res)
+      setFormData({ name: "", email: "", mobileNumber: "" });
+      setSelectedDegree("MBA");
+      setIsLoading(false)
+      isSend(true)
+    } catch (error) {
+      console.log(error)
+      setIsLoading(false)
+    }
 
-    console.log("Form submitted:", submission);
-    const res = await apiClient.post("/consultation", submission);
-    console.log(res)
-    // Optional: Reset form
-    setFormData({ name: "", email: "", mobileNumber: "" });
-    setSelectedDegree("MBA");
   };
 
   return (
@@ -99,9 +109,10 @@ const EnquiryForm = () => {
 
         <button
           type="submit"
-          className="bg-red-600 text-white py-2 px-4 rounded flex items-center gap-2 w-full justify-center outline-none"
+          className={`${send ? 'bg-emerald-500' : 'bg-red-600'}  text-white py-2 px-4 rounded flex items-center gap-2 w-full justify-center outline-none`}
+          disabled={isLoading}
         >
-          <span>Send Enquiry</span>
+          <span>{isLoading ? 'Sending...' : send ? 'Send Successfully' : 'Send Enquiry'}</span>
         </button>
       </form>
     </div>
