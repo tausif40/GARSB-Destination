@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import apiClient from "@/lib/apiClient";
 import axios from "axios";
 
 const EnquiryForm = () => {
@@ -15,6 +14,7 @@ const EnquiryForm = () => {
     mobileNumber: "",
   });
 
+  const baseURL = process.env.NEXT_PUBLIC_API_URL;
 
   const degreeOptions = ["MBA", "Bachelors", "Masters", "Research", "Other"];
 
@@ -38,8 +38,8 @@ const EnquiryForm = () => {
     try {
       setIsLoading(true)
       console.log("Form submitted:", submission);
-      const res = await axios.post("https://garsb.onrender.com/consultation", submission);
-      console.log(res)
+      const res = await axios.post(`${baseURL}/consultation`, submission);
+      // console.log(res)
       setFormData({ name: "", email: "", mobileNumber: "" });
       setSelectedDegree("MBA");
       setIsLoading(false)

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
+import SignIn from './SignIn'
 
 function HomeNav() {
 	const menuRef = useRef(null);
@@ -12,7 +13,6 @@ function HomeNav() {
 	const [ showNav, setShowNav ] = useState(true);
 	const [ lastScrollY, setLastScrollY ] = useState(0);
 	const [ isMobileMenuOpen, setIsMobileMenuOpen ] = useState(false);
-
 
 	useEffect(() => {
 		const handleClickOutside = (event) => {
@@ -91,9 +91,7 @@ function HomeNav() {
 							{item.label}
 						</Link>
 					))}
-					<button className="bg-red-600 text-white px-6 py-2 rounded-md text-sm ml-4">
-						Sign In
-					</button>
+					<SignIn />
 				</nav>
 
 				{/* Hamburger Icon */}
@@ -126,12 +124,10 @@ function HomeNav() {
 							{item.label}
 						</Link>
 					))}
-					<button className="bg-red-600 text-white py-2 px-4 rounded-md text-sm mt-4">
-						Sign In
-					</button>
+					<SignIn />
 				</div>
 			</div>
-		</div>
+		</div >
 	);
 }
 
