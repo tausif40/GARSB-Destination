@@ -4,6 +4,7 @@ import HomeNav from "@/components/Navbar/HomeNav"
 import Footer from "@/components/Footer/Footer"
 import Hero from "@/components/Home/Hero"
 import EnquiryForm from "@/components/Form/EnquiryForm"
+import { Visa } from "@/components/Home/Visa"
 
 export default function Home() {
   return (
@@ -74,8 +75,8 @@ export default function Home() {
           <div className="absolute top-0 left-0 w-full h-full bg-[#ebfee8] -z-10"
             style={{ clipPath: 'polygon(0 0, 100% 0, 100% 12%, 0% 100%)' }}
           ></div>
-
-          <div className="max-w-4xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          <Visa />
+          {/* <div className="max-w-4xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
             {[...Array(15)].map((_, i) => (
               <div key={i} className="bg-gray-100">
                 <Image
@@ -87,7 +88,7 @@ export default function Home() {
                 />
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 
