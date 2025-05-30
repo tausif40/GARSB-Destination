@@ -19,7 +19,7 @@ export function Visa() {
 			className="w-full"
 		>
 			<CarouselContent>
-				{Array.from({ length: 36 }).map((_, i) => (
+				{Array.from({ length: 35 }).map((_, i) => (
 					<CarouselItem key={i} className="md:basis-1/2 lg:basis-1/3">
 						<div className="">
 							<Card>
