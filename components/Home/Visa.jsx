@@ -29,7 +29,7 @@ export function Visa() {
 										alt={`Visa ${i + 1}`}
 										width={300}
 										height={200}
-										className="w-full h-auto shadow-md"
+										className="w-full h-auto shadow-md object-contain"
 									/>
 								</CardContent>
 							</Card>
