@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react'
-import AdminNav from '@/components/Navbar/adminNav'
+import AdminNav from '@/components/Navbar/AdminNav'
 import { usePathname } from 'next/navigation';
 
 
