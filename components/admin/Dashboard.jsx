@@ -1,13 +1,9 @@
 "use client"
 
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import React, { useEffect } from 'react'
+import React from 'react'
 
 function Dashboard() {
-	const route = useRouter()
-	const token = sessionStorage.getItem('token');
-	const sessionStartTime = sessionStorage.getItem('sessionStartTime');
 
 	// useEffect(() => {
 	// 	if (token == null && sessionStartTime == null) {
