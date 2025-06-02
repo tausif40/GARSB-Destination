@@ -17,18 +17,18 @@ function page() {
 	const [ loading, setLoading ] = useState(false);
 
 	const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
-	const SESSION_TIMEOUT = 24 * 60 * 10000;
+	// const SESSION_TIMEOUT = 24 * 60 * 10000;
 
-	useEffect(() => {
-		const sessionStartTime = sessionStorage.getItem('sessionStartTime');
-		const currentTime = Date.now();
-		if (sessionStartTime && currentTime - sessionStartTime > SESSION_TIMEOUT) {
+	// useEffect(() => {
+	// 	const sessionStartTime = sessionStorage.getItem('sessionStartTime');
+	// 	const currentTime = Date.now();
+	// 	if (sessionStartTime && currentTime - sessionStartTime > SESSION_TIMEOUT) {
 
-			sessionStorage.removeItem('token');
-			sessionStorage.removeItem('sessionStartTime');
-			route.push('/admin');
-		}
-	}, [ route ]);
+	// 		sessionStorage.removeItem('token');
+	// 		sessionStorage.removeItem('sessionStartTime');
+	// 		route.push('/admin');
+	// 	}
+	// }, [ route ]);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
