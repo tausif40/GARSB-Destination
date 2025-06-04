@@ -1,7 +1,6 @@
 "use client"
 
 import React from 'react';
-import { Mail, Phone } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -13,10 +12,10 @@ function AdminNav() {
 	// 	contactInfo: { phone: "01708 7 56789", email: "info@bestfittedwardrobe.co.uk" },
 	// }
 
-	const handelLogout = () => {
-		sessionStorage.clear();
-		route.push('/')
-	}
+	// const handelLogout = () => {
+	// 	sessionStorage.clear();
+	// 	route.push('/')
+	// }
 
 	return (
 		<header className="w-full bg-white border-b">

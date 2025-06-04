@@ -38,6 +38,7 @@ const EnquiryForm = () => {
     try {
       setIsLoading(true)
       console.log("Form submitted:", submission);
+      console.log("url - :", `${baseURL}/consultation`);
       const res = await axios.post(`${baseURL}/consultation`, submission);
       // console.log(res)
       setFormData({ name: "", email: "", mobileNumber: "" });
