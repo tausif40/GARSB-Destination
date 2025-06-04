@@ -18,7 +18,7 @@ const ContactUs = () => {
 	}, []);
 
 	useEffect(() => {
-		if (!isMounted) return;
+		// if (!isMounted) return;
 
 		const token = sessionStorage.getItem('token');
 		const sessionStartTime = sessionStorage.getItem('sessionStartTime');
@@ -46,7 +46,7 @@ const ContactUs = () => {
 		};
 
 		fetchUsers();
-	}, [ isMounted, BASE_URL, router ]);
+	}, [ BASE_URL, router ]);
 
 	if (!isMounted) return null; // ❗ prevent mismatched HTML
 	if (loading) return <div className="p-6 text-center text-blue-600">Loading users...</div>;
