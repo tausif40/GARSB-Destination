@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label"
 import { Eye, EyeOff } from "lucide-react"
 import { useRouter } from "next/navigation"
 import axios from "axios"
+import Cookies from 'js-cookie'
 
 function page() {
 	const route = useRouter();
@@ -44,8 +45,8 @@ function page() {
 			}).then((response) => {
 				console.log(response);
 				console.log('Login successful:', response);
-				sessionStorage.setItem('token', response?.data?.tokens?.access?.token);
-				sessionStorage.setItem('sessionStartTime', Date.now());
+				Cookies.set('token', response?.data?.tokens?.access?.token);
+				Cookies.set('sessionStartTime', Date.now());
 				route.push('/admin/dashboard');
 			}).catch((err) => {
 				console.log(err);

@@ -1,7 +1,6 @@
-'use client';
-
 import React from 'react'
 import Users from '@/components/admin/Users'
+
 function page() {
 	return (
 		<>

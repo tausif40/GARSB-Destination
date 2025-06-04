@@ -4,25 +4,19 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { FaCheckCircle, FaTimesCircle, FaUser } from 'react-icons/fa';
+import Cookies from 'js-cookie'
 
 const Users = () => {
 	const [ users, setUsers ] = useState([]);
 	const [ loading, setLoading ] = useState(true);
 	const [ error, setError ] = useState(null);
-	const [ isMounted, setIsMounted ] = useState(false);
 	const router = useRouter();
 	const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
-	useEffect(() => {
-		setIsMounted(true); // wait until client-side
-	}, []);
+	const token = Cookies.get('token');
+	const sessionStartTime = Cookies.get('sessionStartTime');
 
 	useEffect(() => {
-		if (!isMounted) return;
-
-		const token = sessionStorage.getItem('token');
-		const sessionStartTime = sessionStorage.getItem('sessionStartTime');
-
 		if (!token || !sessionStartTime) {
 			router.push('/admin');
 			return;
@@ -46,9 +40,8 @@ const Users = () => {
 		};
 
 		fetchUsers();
-	}, [ isMounted, BASE_URL, router ]);
+	}, [ router ]);
 
-	if (!isMounted) return null; // ❗ prevent mismatched HTML
 	if (loading) return <div className="p-6 text-center text-blue-600">Loading users...</div>;
 	if (error) return <div className="p-6 text-center text-red-600">Error: {error}</div>;
 

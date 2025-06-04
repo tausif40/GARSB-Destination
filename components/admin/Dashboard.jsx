@@ -5,13 +5,6 @@ import React from 'react'
 
 function Dashboard() {
 
-	// useEffect(() => {
-	// 	if (token == null && sessionStartTime == null) {
-	// 		navigate('/admin')
-	// 		return;
-	// 	}
-	// }, [])
-
 	return (
 		<>
 			<div className='h-[87vh] w-full bg-no-repeat object-cover bg-slate-200' style={{ backgroundImage: "url('/assets/img/homeCrouse/bed1.jpeg')", objectFit: "cover" }}>
